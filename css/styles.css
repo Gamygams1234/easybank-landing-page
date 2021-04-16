@@ -23,6 +23,7 @@
 body {
   font-family: "Public Sans", sans-serif;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 .btn-primary {
@@ -34,6 +35,12 @@ body {
 
 .btn-primary:hover {
   filter: brightness(1.05) contrast(100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
 }
 
 header {
@@ -99,6 +106,7 @@ header .menu-icon i {
 }
 
 .section-1 {
+  background-color: #fafafa;
   z-index: 50;
   display: grid;
 }
@@ -132,7 +140,79 @@ header .menu-icon i {
   width: 100%;
 }
 
+.section-2 {
+  background-color: #f3f4f6;
+  color: #2d314d;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  text-align: center;
+}
+.section-2 .description h2 {
+  font-size: 2em;
+}
+.section-2 .description p {
+  line-height: 1.5;
+}
+.section-2 .grid .grid-item {
+  display: flex;
+  flex-direction: column;
+}
+.section-2 .grid .grid-item h3 {
+  font-size: 1.5em;
+}
+.section-2 .grid .grid-item p {
+  line-height: 1.5;
+}
+
+footer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.section-3 {
+  background-color: #fafafa;
+}
+.section-3 .grid .grid-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+  overflow: hidden;
+  background-color: white;
+}
+.section-3 .grid .grid-item .image {
+  height: 200px;
+  overflow: hidden;
+}
+.section-3 .grid .grid-item .image img {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+}
+.section-3 .grid .grid-item .article-description {
+  padding: 24px 30px;
+  flex-direction: column;
+  text-align: left;
+}
+.section-3 .grid .grid-item .article-description h4 {
+  font-size: 0.6em;
+}
+.section-3 .grid .grid-item .article-description h3 {
+  font-size: 1.5em;
+  transition: all 0.2s ease-in-out;
+}
+.section-3 .grid .grid-item .article-description h3:hover {
+  cursor: pointer;
+  color: #31d35c;
+}
+.section-3 .grid .grid-item .article-description p {
+  line-height: 1.5;
+}
+
 @media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -214,13 +294,34 @@ header .menu-icon i {
     background-size: 150%;
   }
   .section-1 .right-side img {
-    display: none;
+    width: 600px;
     position: absolute;
-    right: 210px;
-    margin-right: -210px;
+    margin-top: 0;
+    right: -42.5%;
+  }
+
+  .section-2 {
+    padding-top: 117px;
+    padding-bottom: 117px;
+    text-align: left;
+  }
+  .section-2 .description {
+    width: 50%;
+  }
+  .section-2 .description h2 {
+    font-size: 2.25em;
+  }
+
+  footer {
+    padding-top: 117px;
+    padding-bottom: 117px;
   }
 }
 @media screen and (min-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   .padding-container {
     padding-left: 165px;
     padding-right: 165px;
@@ -229,5 +330,14 @@ header .menu-icon i {
   .margin-container {
     margin-left: 165px;
     margin-right: 165px;
+  }
+
+  .section-1 .right-side img {
+    width: 100%;
+    max-width: 950px;
+    position: absolute;
+    margin-top: 0;
+    top: -175px;
+    right: -225px;
   }
 }
