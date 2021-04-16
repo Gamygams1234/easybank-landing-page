@@ -178,10 +178,7 @@ header {
         }
     }
 }
-footer {
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
+
 .section-3 {
     background-color: $veryLightGray;
     .grid {
@@ -219,6 +216,64 @@ footer {
                     line-height: 1.5;
                 }
             }
+        }
+    }
+}
+footer {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $darkBlue;
+    .logo-social {
+        .social {
+            display: flex;
+            a {
+                font-size: 1.25em;
+                color: white;
+                text-decoration: none;
+                margin-left: 16px;
+                transition: all 0.2s ease-in-out;
+            }
+            a:hover {
+                color: $limeGreen;
+            }
+            a:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+        a:hover {
+            color: $limeGreen;
+        }
+    }
+    .button-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        button {
+            margin-bottom: 1.25em;
+        }
+        .copyright {
+            color: hsl(233, 8%, 62%);
         }
     }
 }
@@ -328,10 +383,6 @@ footer {
             }
         }
     }
-    footer {
-        padding-top: 117px;
-        padding-bottom: 117px;
-    }
 }
 
 @media screen and (min-width: 992px) {
@@ -356,6 +407,36 @@ footer {
                 margin-top: 0;
                 top: -175px;
                 right: -225px;
+            }
+        }
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr;
+        .logo-social {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .links {
+            flex-wrap: wrap;
+            text-align: left;
+            flex-direction: row;
+            justify-content: start;
+            align-items: flex-start;
+            a {
+                width: 200px;
+            }
+        }
+        .button-copyright {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: right;
+            align-items: flex-end;
+            button {
+                margin-top: 0;
             }
         }
     }

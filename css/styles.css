@@ -164,11 +164,6 @@ header .menu-icon i {
   line-height: 1.5;
 }
 
-footer {
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-
 .section-3 {
   background-color: #fafafa;
 }
@@ -206,6 +201,63 @@ footer {
 }
 .section-3 .grid .grid-item .article-description p {
   line-height: 1.5;
+}
+
+footer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #2d314d;
+}
+footer .logo-social .social {
+  display: flex;
+}
+footer .logo-social .social a {
+  font-size: 1.25em;
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+  transition: all 0.2s ease-in-out;
+}
+footer .logo-social .social a:hover {
+  color: #31d35c;
+}
+footer .logo-social .social a:first-child {
+  margin-left: 0px;
+}
+footer .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+footer .links a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+footer .links a:hover {
+  color: #31d35c;
+}
+footer .button-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+footer .button-copyright button {
+  margin-bottom: 1.25em;
+}
+footer .button-copyright .copyright {
+  color: #9698a6;
 }
 
 @media screen and (min-width: 768px) {
@@ -311,11 +363,6 @@ footer {
   .section-2 .description h2 {
     font-size: 2.25em;
   }
-
-  footer {
-    padding-top: 117px;
-    padding-bottom: 117px;
-  }
 }
 @media screen and (min-width: 992px) {
   .grid {
@@ -339,5 +386,36 @@ footer {
     margin-top: 0;
     top: -175px;
     right: -225px;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+  }
+  footer .logo-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  footer .links {
+    flex-wrap: wrap;
+    text-align: left;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+  }
+  footer .links a {
+    width: 200px;
+  }
+  footer .button-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    align-items: flex-end;
+  }
+  footer .button-copyright button {
+    margin-top: 0;
   }
 }
