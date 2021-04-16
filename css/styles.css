@@ -37,12 +37,16 @@ body {
 }
 
 header {
+  position: relative;
   padding-top: 33px;
   padding-bottom: 33px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #2d314d;
+  z-index: 100;
+  background-color: white;
+  opacity: 1;
 }
 header .mobile {
   display: block;
@@ -95,9 +99,37 @@ header .menu-icon i {
 }
 
 .section-1 {
-  background-color: #31d35c;
-  padding-top: 20px;
-  height: 900px;
+  z-index: 50;
+  display: grid;
+}
+.section-1 .left-side {
+  color: #2d314d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-row: 2/3;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.section-1 .left-side h1 {
+  font-size: 2.5em;
+}
+.section-1 .left-side p {
+  line-height: 1.5;
+}
+.section-1 .right-side {
+  position: relative;
+  grid-row: 1/2;
+  background-image: url(../images/bg-intro-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+}
+.section-1 .right-side img {
+  margin-top: -135px;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -140,6 +172,12 @@ header .menu-icon i {
     transition: all 0.2s ease-in-out;
     border-radius: 0.1rem;
   }
+  header .links li:last-child {
+    margin-right: 0px;
+  }
+  header .links li:first-child {
+    margin-left: 0px;
+  }
   header .links li:hover a {
     text-shadow: 0 0 1.1px #2d314d, 0 0 1.1px #2d314d;
   }
@@ -149,6 +187,37 @@ header .menu-icon i {
 
   #mobile-links {
     display: none !important;
+  }
+
+  .section-1 {
+    grid-template-columns: 45% 55%;
+  }
+  .section-1 .left-side {
+    padding-top: 170px;
+    padding-bottom: 170px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-right: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+  }
+  .section-1 .left-side h1 {
+    font-size: 3.1em;
+  }
+  .section-1 .right-side {
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-image: url(../images/bg-intro-desktop.svg);
+    background-position: center left 20px;
+    background-size: 150%;
+  }
+  .section-1 .right-side img {
+    display: none;
+    position: absolute;
+    right: 210px;
+    margin-right: -210px;
   }
 }
 @media screen and (min-width: 992px) {

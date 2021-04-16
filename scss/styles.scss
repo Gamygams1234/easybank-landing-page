@@ -44,12 +44,16 @@ body {
 }
 
 header {
+    position: relative;
     padding-top: 33px;
     padding-bottom: 33px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $darkBlue;
+    z-index: 100;
+    background-color: white;
+    opacity: 1;
     .mobile {
         display: block;
     }
@@ -103,9 +107,40 @@ header {
     }
 }
 .section-1 {
-    background-color: $limeGreen;
-    padding-top: 20px;
-    height: 900px;
+    z-index: 50;
+    display: grid;
+    .left-side {
+        color: $darkBlue;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/3;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            line-height: 1.5;
+        }
+    }
+    .right-side {
+        position: relative;
+        grid-row: 1/2;
+        background-image: url(../images/bg-intro-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: cover;
+
+        img {
+            margin-top: -135px;
+
+            width: 100%;
+        }
+    }
 }
 @media screen and (min-width: 768px) {
     header {
@@ -148,6 +183,12 @@ header {
                     border-radius: 0.1rem;
                 }
             }
+            li:last-child {
+                margin-right: 0px;
+            }
+            li:first-child {
+                margin-left: 0px;
+            }
             li:hover {
                 a {
                     text-shadow: 0 0 1.1px $darkBlue, 0 0 1.1px $darkBlue;
@@ -160,6 +201,37 @@ header {
     }
     #mobile-links {
         display: none !important;
+    }
+    .section-1 {
+        grid-template-columns: 45% 55%;
+        .left-side {
+            padding-top: 170px;
+            padding-bottom: 170px;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            padding-right: 25px;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            h1 {
+                font-size: 3.1em;
+            }
+        }
+        .right-side {
+            position: relative;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-image: url(../images/bg-intro-desktop.svg);
+            background-position: center left 20px;
+            background-size: 150%;
+
+            img {
+                display: none;
+                position: absolute;
+                right: 210px;
+                margin-right: -210px;
+            }
+        }
     }
 }
 
